@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router'
-
+import VideoImageThumbnail from 'react-video-thumbnail-image';
 import { getOwnerVideos, VideoType } from '../../api/video-api';
 
 import './video-home.scss';
@@ -23,7 +23,13 @@ const VideoHome = () => {
       <h1>My Videos</h1>
       <div className='video-grid'>
         {videos.length > 1 && videos.map((video, index) =>
-          <video key={index} onClick={() => watchVideo(video.vanityUrl)}>
+          <video 
+            key={index} 
+            playsInline 
+            muted 
+            autoPlay 
+            loop
+            onClick={() => watchVideo(video.vanityUrl)}>
             <source
               type='video/mp4'
               src={video.url}

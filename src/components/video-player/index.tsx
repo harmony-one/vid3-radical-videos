@@ -13,7 +13,7 @@ type VideoPlayerProps = {
 }
 
 const VideoPlayer = ({ video } : VideoPlayerProps) => {
-  const [muted, setMuted] = useState(false)
+  const [muted, setMuted] = useState(true)
   const [isPlayed, setIsPlayed] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
   const navigate = useNavigate()
@@ -39,23 +39,24 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
   }
 
   // to allow autoplay with video unmuted
-  const videoLoaded = (e: any) => {
-    const video = videoRef.current
-    if (video) {
-      video.play()
-      setIsPlayed(true)
-    }
-  }
+  // const videoLoaded = (e: any) => {
+  //   const video = videoRef.current
+  //   if (video) {
+  //     // video.play()
+  //     // setIsPlayed(true)
+  //   }
+  // }
 
   return (
     <div className='video-player'>
       <video
         ref={videoRef}
         src={video.url}
-        // autoPlay
+        playsInline
+        autoPlay
         loop
         muted={muted}
-        onLoadedData={videoLoaded}
+        // onLoadedData={videoLoaded}
       />
       <div className='videoPlayer-content' onClick={pauseVideo}>
         <div className='videoPlayer-top'>
