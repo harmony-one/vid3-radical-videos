@@ -23,18 +23,22 @@ const VideoHome = () => {
       <h1>My Videos</h1>
       <div className='video-grid'>
         {videos.length > 1 && videos.map((video, index) =>
-          <video 
-            key={index} 
-            playsInline 
-            muted 
-            autoPlay 
-            loop
-            onClick={() => watchVideo(video.vanityUrl)}>
-            <source
-              type='video/mp4'
-              src={video.url}
-            />
-          </video>
+          <div onClick={(e) => {
+            e.stopPropagation();
+            watchVideo(video.vanityUrl)
+          }}
+            // dangerouslySetInnerHTML={{
+            //   __html: `<video 
+            //     key=${index} 
+            //     playsInline 
+            //     muted 
+            //     autoPlay 
+            //     loop
+            //     type='video/mp4'
+            //     src="${video.url}"
+            // </video>`
+            // }}  
+          ><h1>{index}</h1></div>
         )}
       </div>
     </div>

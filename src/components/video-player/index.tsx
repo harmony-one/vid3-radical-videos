@@ -55,11 +55,18 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
       <video
         ref={videoRef}
         src={video.url}
-        playsInline={swiperSlide.isActive ? true : false}
-        preload={swiperSlide.isActive ? 'auto' : 'none'}
+        playsInline
+        // preload
         autoPlay
         loop
         muted={muted}
+        // ref={videoRef}
+        // src={video.url}
+        // playsInline={swiperSlide.isActive ? true : false}
+        // preload={swiperSlide.isActive ? 'auto' : 'none'}
+        // autoPlay
+        // loop
+        // muted={muted}
         // onLoadedData={videoLoaded}
       />
       <div className='videoPlayer-content' onClick={pauseVideo}>

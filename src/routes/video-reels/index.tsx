@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+// import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useParams } from 'react-router-dom'
 
@@ -11,6 +12,7 @@ import 'swiper/css';
 
 const VideoReels = () => {
   const [videos, setVideos] = useState<VideoType[]>([])
+  const [video, setVideo] = useState<VideoType>()
   const [orientation, isLandscape] = useScreenOrientation();
   const { vanityUrl } = useParams()
 
@@ -20,12 +22,15 @@ const VideoReels = () => {
     videoList.unshift(videoList.splice(index, 1)[0])
     setVideos(videoList)
     console.log(videoList[0])
+    setVideo(videoList[0])
   }, [])
-  console.log(orientation)
+
   return (
     <div className='video-reels'>
-      <Swiper 
-        slidesPerView={1}
+      {/* <h1>Hi</h1> */}
+      { video && <VideoPlayer video={video} /> }
+      {/* <Swiper 
+        slidesPerView={4}
         // direction={!isLandscape ? 'vertical' : 'horizontal'} 
         direction={'horizontal'} 
         onSlideChange={() => console.log('slide change')}
@@ -36,7 +41,7 @@ const VideoReels = () => {
             <VideoPlayer video={video} />
           </SwiperSlide>
       ))}
-    </Swiper>
+    </Swiper> */}
     </div>
   )
 }
