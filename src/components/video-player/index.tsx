@@ -1,9 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router'
-import { useSwiperSlide } from 'swiper/react';
 
 import { VideoType } from '../../api/video-api'
-
 import { BsVolumeMuteFill, BsVolumeDownFill } from 'react-icons/bs'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import ApplePayLogo from '../../assets/images/logos/Apple Pay Logo White 2.png'
@@ -18,7 +16,6 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
   const [muted, setMuted] = useState(true)
   const [isPlayed, setIsPlayed] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const swiperSlide = useSwiperSlide();
   const navigate = useNavigate()
 
   const muteVideo = (e: { stopPropagation: () => void }) => {
@@ -55,8 +52,7 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
       <video
         ref={videoRef}
         src={video.url}
-        playsInline={swiperSlide.isActive ? true : false}
-        preload={swiperSlide.isActive ? 'auto' : 'none'}
+        playsInline
         autoPlay
         loop
         muted={muted}

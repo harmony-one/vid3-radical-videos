@@ -15,7 +15,7 @@ const VideoHome = () => {
   }, [])
 
   const watchVideo = (vanityUrl: string) => {
-    navigate(`/${vanityUrl}`)
+    navigate(`/videos/${vanityUrl}`)
   }
   
   return (
