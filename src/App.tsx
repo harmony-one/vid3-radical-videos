@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/videos' element={<VideoHome />} />
-        <Route path='/videos/:vanityUrl' element={<VideoReels />}/>
+        <Route path='/' element={<VideoHome />} />
+        <Route path='/:vanityUrl' element={<VideoReels />}/>
       </Routes>
     </div>
   );
