@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, RefObject, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router'
+import { useInView } from 'react-intersection-observer';
 
 import { VideoType } from '../../api/video-api'
 import { BsVolumeMuteFill, BsVolumeDownFill } from 'react-icons/bs'
@@ -16,8 +17,15 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
   const [muted, setMuted] = useState(true)
   const [isPlayed, setIsPlayed] = useState(true)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const navigate = useNavigate()
 
+  const { ref, inView } = useInView({
+    /* Optional options */
+    rootMargin : "0px",
+    root: null,
+    threshold: 0.1,
+  });
+
+  const navigate = useNavigate()
   const muteVideo = (e: { stopPropagation: () => void }) => {
     e.stopPropagation()
     setMuted(current => !current)
@@ -38,25 +46,57 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
     }
   }
 
+  // useEffect(() => {
+  //   if (!isVisible && muted) {
+  //     // const v = videoRef.current
+  //     console.log(video.url, isVisible)
+  //     setMuted(current => !current)
+  //     setIsPlayed(false)
+  //   } 
+  //   // else {
+  //   //   v && v.play()
+  //   //   setIsPlayed(true)
+  //   //   setMuted(current => !current)
+  //   // }
+
+  // }, [isVisible])
+
+  useEffect(() => {
+    if (!inView) {
+      setMuted(true)
+    }
+  }, [inView])
+  
+  // const onLoadedVideo = () => {
+  //   setIsVideoLoaded(true);
+  // };
+
   // to allow autoplay with video unmuted
   // const videoLoaded = (e: any) => {
-  //   const video = videoRef.current
-  //   if (video) {
-  //     // video.play()
-  //     // setIsPlayed(true)
-  //   }
-  // }
+  //   const video = videoRef.current;
+  //   video?.requestFullscreen();
 
+  //   // if (video) {
+  //   //   video.play()
+  //   //   setIsPlayed(true)
+  //   // }
+  // }
+ 
   return (
-    <div className='video-player'>
+    <div className='video-player' ref={ref}>
       <video
         ref={videoRef}
         src={video.url}
         playsInline
         autoPlay
+        preload={inView ? 'auto' : 'none'}
         loop
         muted={muted}
-        // onLoadedData={videoLoaded}
+        // muted={isVisible && muted}
+        // hidden={!isVideoLoaded}
+        // onLoad={() => console.log('load', video.url)}
+        // onLoadedData={() => console.log('loaded', video.url)}
+        // on
       />
       <div className='videoPlayer-content' onClick={pauseVideo}>
         <div className='videoPlayer-top'>

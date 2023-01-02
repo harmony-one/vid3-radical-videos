@@ -1,22 +1,49 @@
 import React, { useEffect, useState } from 'react'
 import VideoPlayer from '../../components/video-player';
-
+import Slider from "react-slick";
 import { useParams } from 'react-router-dom'
-import { getVideo, VideoType } from '../../api/video-api'
+import { getOwnerVideos, VideoType } from '../../api/video-api'
+
+import './video-reels.scss';
 
 const VideoReels = () => {
-  const [videos, setVideos] = useState<VideoType>()
+  const [videos, setVideos] = useState<VideoType[]>([])
   const { vanityUrl } = useParams()
 
+  const sliderSettings = {
+    // dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // responsive: [
+    //   {
+    //     // breakpoint: 600,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
+  }
+
   useEffect(() => {
-    setVideos(getVideo(vanityUrl!))
-  }, [vanityUrl])
+    let videoList = getOwnerVideos('test');
+    const index = videoList.findIndex(v => v.vanityUrl === vanityUrl);
+    videoList.unshift(videoList.splice(index, 1)[0])
+    setVideos(videoList)
+
+  }, [])
 
   return (
-    <div>
-      {videos && <VideoPlayer video={videos} />}
+    <div className='video-reels'>
+      <Slider className='carousel' {...sliderSettings}>
+        {videos.map((video: any, index: React.Key | null | undefined) => {
+          return <VideoPlayer video={video} key={index} />
+        })}
+      </Slider>
     </div>
   )
 }
 
-export default VideoReels
+export default VideoReels;

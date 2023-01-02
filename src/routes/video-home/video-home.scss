@@ -13,5 +13,9 @@
       cursor: pointer;
       width: 100%;
     }
+
+    video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+    }
   }
 }
