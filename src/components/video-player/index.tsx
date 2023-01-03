@@ -46,6 +46,9 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
     }
   }
 
+  const purchaseButton = (e: any) => {
+    console.log(e);
+  }
   // useEffect(() => {
   //   if (!isVisible && muted) {
   //     // const v = videoRef.current
@@ -103,9 +106,11 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
           <div className='videoPlayer-top-close' onClick={close}>
             <AiFillCloseCircle />
           </div>
-          <div className='videoPlayer-pay-icon'>
+          { video.merchandiseId && (
+            <div className='videoPlayer-pay-icon' onClick={purchaseButton}>
             <img src={ApplePayLogo} alt='Apple Pay' />
           </div>
+          )}
         </div>
         <div className='videoPlayer-bottom'>
           <div className='videoPlayer-mute-icon' onClick={muteVideo}>
