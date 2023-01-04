@@ -1,13 +1,23 @@
 .video-home {
+  // position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   margin: 0 auto;
-  width: 80%;
-  margin-bottom: 2em;
+  overflow: hidden !important;
+  // margin-bottom: 2em;
+  height: -webkit-fill-available !important;
+  min-height: 100vh;
   
   .video-grid {
+    margin: 0 auto;
+    width: 90%;
     display: grid;
-    overflow: hidden;
+    overflow: scroll !important;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     grid-gap: 1em;
+    margin-bottom: 4em;
 
     video {
       cursor: pointer;

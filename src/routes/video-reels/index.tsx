@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import VideoPlayer from '../../components/video-player';
 import Slider from "react-slick";
 import { useParams } from 'react-router-dom'
-import { getOwnerVideos, VideoType } from '../../api/video-api'
+import { getOwnerVideos, VideoType } from '../../util/api/video-api'
 
 import './video-reels.scss';
 

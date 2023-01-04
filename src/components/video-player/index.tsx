@@ -2,7 +2,7 @@ import React, { useState, RefObject, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import { useInView } from 'react-intersection-observer';
 
-import { VideoType } from '../../api/video-api'
+import { VideoType } from '../../util/api/video-api'
 import { BsVolumeMuteFill, BsVolumeDownFill } from 'react-icons/bs'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import ApplePayLogo from '../../assets/images/logos/Apple Pay Logo White 2.png'
@@ -46,7 +46,8 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
     }
   }
 
-  const purchaseButton = (e: any) => {
+  const purchaseButton = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation();
     console.log(e);
   }
   // useEffect(() => {

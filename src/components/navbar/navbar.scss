@@ -1,0 +1,40 @@
+.navbar {
+  position: fixed !important; //sticky;
+  bottom: 0 !important;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw !important;
+  height: 2.5em;
+  margin-bottom: 0;
+  background-color: #525252;
+  color: white;
+  line-height: 1rem !important;
+  font-size: 1.3rem;
+   
+  .home {
+    width: 5em !important;
+    padding-left: 0.5em;
+  }
+  
+  .wallet-button {
+    width: 5em;
+    padding-right: 0.5em;
+    text-align: right;
+
+  }
+  
+  .active {
+    color: rgb(117, 193, 117) !important;
+  }
+}
+
+// button {
+//   border: 0;
+//   color: white;
+//   background-color: transparent;
+//   font-size: 1.3rem;
+//   padding: 0;
+// }
