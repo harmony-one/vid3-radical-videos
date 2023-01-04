@@ -1,22 +1,28 @@
-import { useRef } from "react";
+import { useNavigate } from "react-router";
+import { VideoType } from "../../util/api/video-api";
 
 type VideoThumbnailProps = {
-  url : string
+  video : VideoType
 }
 
-const VideoThumbnail = ({ url } : VideoThumbnailProps) => {
-  const videoRef = useRef(null);
+const VideoThumbnail = ({ video } : VideoThumbnailProps) => {
+  const navigate = useNavigate();
+  
+  const watchVideo = (vanityUrl: string) => {
+    navigate(`${vanityUrl}`);
+  };
+
   return (
     <div>
-      {/* <video
-        src={url}
-        ref={player}
-        paused={true}
-        style={styles.backgroundVideo}
-        onLoad={() => {
-          player.current.seek(0); // this will set first frame of video as thumbnail
-        }}
-      /> */}
+       <video
+        playsInline
+        muted
+        autoPlay
+        loop
+        onClick={() => watchVideo(video.vanityUrl)}
+      >
+        <source type="video/mp4" src={video.url} />
+      </video>
     </div>
   )
 }
