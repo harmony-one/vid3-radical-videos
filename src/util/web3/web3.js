@@ -6,6 +6,11 @@ import BN from "bn.js";
 
 console.log("CONTRACT", process.env.REACT_APP_CONTRACT_ADDRESS);
 
+export const checkIsOwner = (address, owner) => {
+  return address && owner && owner.toLowerCase() === address.toLowerCase();
+}
+
+
 export const getFullName = (name) => {
   return name;
   // `${name}${config.tdl}`

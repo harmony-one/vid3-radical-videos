@@ -4,7 +4,6 @@ import recordReducer from './recordSlice';
 export const store = configureStore({
   reducer: {
     record: recordReducer,
-    // isOwner: isOwnerReducer
   }
 })
 

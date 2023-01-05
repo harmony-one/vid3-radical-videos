@@ -5,24 +5,27 @@ import { RootState } from "./store";
 export const recordSlice = createSlice({
   name: "record",
   initialState: {
-    currentRecord: {
-      renter: "",
-      lastPrice: {},
-      timeUpdated: 0,
-      url: "",
-      prev: "",
-      next: "",
-    }
+    owner: '',
+    url: '',
+    isOwner: false
   },
   reducers: {
-    setRecord : (state : any, action: PayloadAction<RecordType>) => {
-      state.currentRecord = action.payload;
+    setOwner : (state : any, action: PayloadAction<string>) => {
+      state.owner = action.payload 
+    },
+    setUrl : (state : any, action: PayloadAction<string>) => {
+      state.url = action.payload
+    },
+    setIsOwner : (state : any, action: PayloadAction<boolean>) => {
+      state.isOwner = action.payload
     },
   },
 });
 
-export const { setRecord } = recordSlice.actions;
+export const { setOwner, setUrl, setIsOwner } = recordSlice.actions;
 
-export const selectRecord = (state: RootState) => state.record.currentRecord;
+export const selectOwner = (state: RootState) => state.record.owner;
+export const selectUrl = (state: RootState) => state.record.url;
+export const selectIsOwner = (state: RootState) => state.record.isOwner;
 
 export default recordSlice.reducer;

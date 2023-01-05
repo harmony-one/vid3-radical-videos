@@ -1,23 +1,26 @@
+import { useEffect, useState } from "react";
 import { useAccount, useDisconnect } from "wagmi";
 import { useWeb3Modal } from "@web3modal/react";
 
 import { AiFillHome, AiOutlinePlus } from "react-icons/ai";
 import { FaWallet } from "react-icons/fa";
 
-import "./navbar.scss";
-import { useEffect, useState } from "react";
+import { checkIsOwner } from "../../util/web3/web3";
 import { useAppSelector } from "../../hooks/redux";
+import { selectIsOwner, selectOwner } from "../../store/recordSlice";
+import { useAppDispatch } from '../../hooks/redux';
+import { setIsOwner } from '../../store/recordSlice';
 
+import "./navbar.scss";
 const Navbar = () => {
   const { address, isConnected } = useAccount();
-  const [ isOwner, setIsOnwer ] = useState(false);
   const [ walletClassName, setWalletClassName ] = useState("wallet-button")
   const { open } = useWeb3Modal();
-  
-  const record = useAppSelector((state) => state.record.currentRecord) 
-  
+  const owner = useAppSelector(selectOwner); 
+  const isOwner = useAppSelector(selectIsOwner);
   const { disconnect } = useDisconnect();
-
+  const dispatch = useAppDispatch();
+  
   const buttonHandler = () => {
     console.log('click', isConnected);
     if (isConnected) {
@@ -30,10 +33,14 @@ const Navbar = () => {
   useEffect(() => {
     if (isConnected) {
       setWalletClassName('nav-wallet-button active')
+      owner && dispatch(setIsOwner(checkIsOwner(address,owner)))
     } else {
       setWalletClassName('nav-wallet-button')
     }
-  }, [isConnected])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isConnected, address])
+
+  console.log('NAVBAR', owner);
 
   return (
     <div className="navbar">

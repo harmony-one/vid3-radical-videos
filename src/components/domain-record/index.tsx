@@ -1,23 +1,21 @@
-import { AnyAction } from '@reduxjs/toolkit';
+
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useAppDispatch } from '../../hooks/redux';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { useAccount } from 'wagmi'
 import Web3 from 'web3';
 
-import { setRecord } from '../../store/recordSlice';
-import { RecordType } from '../../types';
+import { selectUrl, setOwner, setUrl } from '../../store/recordSlice';
 import { config, truncateAddressString } from '../../util/web3/config';
 import apis from '../../util/web3/web3';
 
 import './domain-record.scss'
 
 const DomainRecord = () => {
-  const [name, setName] = useState('');
-  const [owner, setOwner] = useState('');
+  const [ownerAddress, setOwnerAddress] = useState('');
   const { address } = useAccount();
   const dispatch = useAppDispatch();
   
+  const name = useAppSelector(selectUrl);
   const tld = process.env.REACT_APP_TLD;
   
   useEffect(() => {
@@ -39,11 +37,10 @@ const DomainRecord = () => {
     }
     
     const name = getSubdomain(); 
-    setName(name ? name : '');      
-      // setIsOwner(address && record?.renter && record.renter.toLowerCase() === address.toLowerCase())
-    // })
-    // setClient(api)
-    // // init()
+    if (name) {
+      dispatch(setUrl(name))      
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {
@@ -52,24 +49,17 @@ const DomainRecord = () => {
       const api = apis({ web3, address })
       console.log(api);
       api?.getRecord({ name }).then((r) => {
-        // dispatch(setRecord(r))
-        dispatch(setRecord(r))
-        console.log('RRRRRR',r);
-        setOwner(r.renter);
+        dispatch(setOwner(r.renter))
+        setOwnerAddress(r.renter);
       }).catch(e => console.log('ERRORRRRRR', { e }));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name, address])
 
-  // useEffect(() => {
-  //   if (name) {
-  //     const res = refetch()
-  //     console.log(res)
-  //   }
-  // },[name, refetch])
   return (
     <div className='domain-record'>
       <div className='record-title'>{`${name}${tld}`}</div>
-      <div className='record-owner'>Owner {truncateAddressString(owner,10)}</div>
+      <div className='record-owner'>{name && `Owner ${truncateAddressString(ownerAddress,10)}`}</div>
     </div>
   )
 }
