@@ -36,6 +36,7 @@ const Navbar = () => {
       owner && dispatch(setIsOwner(checkIsOwner(address,owner)))
     } else {
       setWalletClassName('nav-wallet-button')
+      dispatch(setIsOwner(false))
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isConnected, address, owner])

@@ -13,7 +13,7 @@ import './domain-record.scss'
 
 const DomainRecord = () => {
   const [ownerAddress, setOwnerAddress] = useState('');
-  const { address } = useAccount();
+  const { address, isConnected } = useAccount();
   const dispatch = useAppDispatch();
   
   const name = useAppSelector(selectUrl);
@@ -62,7 +62,7 @@ const DomainRecord = () => {
     <div className='domain-record'>
       <div className='record-title'>{`${name}${tld}`}</div>
       <div className='record-owner'>{name && !isOwner && `Owner ${truncateAddressString(ownerAddress,10)}`}</div>
-      <div className='record-owner'>{name && isOwner && `You own this domain page`}</div>
+      <div className='record-owner'>{name && isOwner && isConnected && `You own this domain page`}</div>
     </div>
   )
 }
