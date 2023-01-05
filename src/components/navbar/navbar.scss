@@ -14,12 +14,12 @@
   line-height: 1rem !important;
   font-size: 1.3rem;
    
-  .home {
+  .nav-home {
     width: 5em !important;
     padding-left: 0.5em;
   }
   
-  .wallet-button {
+  .nav-wallet-button {
     width: 5em;
     padding-right: 0.5em;
     text-align: right;
@@ -29,12 +29,19 @@
   .active {
     color: rgb(117, 193, 117) !important;
   }
-}
 
-// button {
-//   border: 0;
-//   color: white;
-//   background-color: transparent;
-//   font-size: 1.3rem;
-//   padding: 0;
-// }
+  .nav-action {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .nav-subscribe-button {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    padding: 0.4em 1.2em 0.4em;
+    font-size: 0.9rem;
+  }
+}

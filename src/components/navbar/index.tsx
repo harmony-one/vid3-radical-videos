@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const { address, isConnected } = useAccount();
+  const [ isOwner, setIsOnwer ] = useState(false);
   const [ walletClassName, setWalletClassName ] = useState("wallet-button")
   const { open } = useWeb3Modal();
 
@@ -25,19 +26,21 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isConnected) {
-      setWalletClassName('wallet-button active')
+      setWalletClassName('nav-wallet-button active')
     } else {
-      setWalletClassName('wallet-button')
+      setWalletClassName('nav-wallet-button')
     }
   }, [isConnected])
   
   return (
     <div className="navbar">
-      <div className="home">
+      <div className='nav-home'>
         <AiFillHome />
       </div>
-      <div>
-        <AiOutlinePlus />
+      <div className='nav-action'>
+        {!isConnected && (<span style={{ fontSize: '0.9rem'}}>Connect Wallet</span>)}
+        {isConnected && isOwner && (<AiOutlinePlus />) }
+        {isConnected && !isOwner && (<button className='nav-subscribe-button'>Subscribe</button>) }
       </div>
       <div className={walletClassName} onClick={buttonHandler}>
         <FaWallet />

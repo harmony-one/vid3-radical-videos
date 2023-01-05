@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet";
 import logo from "./logo.svg";
 import VideoHome from "./routes/video-home";
 import VideoReels from "./routes/video-reels";
-import { config } from "./util/web3/web3";
+import { config } from "./util/web3/config";
 import "./App.css";
 
 const projectId = process.env.REACT_APP_WALLETCONNECT_PROJECTID!;
