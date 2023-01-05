@@ -5,6 +5,7 @@ import { useAccount } from 'wagmi'
 import Web3 from 'web3';
 
 import { selectUrl, setOwner, setUrl } from '../../store/recordSlice';
+import { selectIsOwner } from "../../store/recordSlice";
 import { config, truncateAddressString } from '../../util/web3/config';
 import apis from '../../util/web3/web3';
 
@@ -16,6 +17,7 @@ const DomainRecord = () => {
   const dispatch = useAppDispatch();
   
   const name = useAppSelector(selectUrl);
+  const isOwner = useAppSelector(selectIsOwner);
   const tld = process.env.REACT_APP_TLD;
   
   useEffect(() => {
@@ -59,7 +61,8 @@ const DomainRecord = () => {
   return (
     <div className='domain-record'>
       <div className='record-title'>{`${name}${tld}`}</div>
-      <div className='record-owner'>{name && `Owner ${truncateAddressString(ownerAddress,10)}`}</div>
+      <div className='record-owner'>{name && !isOwner && `Owner ${truncateAddressString(ownerAddress,10)}`}</div>
+      <div className='record-owner'>{name && isOwner && `You own this domain page`}</div>
     </div>
   )
 }

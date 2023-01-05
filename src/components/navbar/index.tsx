@@ -38,9 +38,7 @@ const Navbar = () => {
       setWalletClassName('nav-wallet-button')
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isConnected, address])
-
-  console.log('NAVBAR', owner);
+  }, [isConnected, address, owner])
 
   return (
     <div className="navbar">

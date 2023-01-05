@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RecordType } from "../types";
 import { RootState } from "./store";
 
 export const recordSlice = createSlice({
@@ -23,7 +22,6 @@ export const recordSlice = createSlice({
 });
 
 export const { setOwner, setUrl, setIsOwner } = recordSlice.actions;
-
 export const selectOwner = (state: RootState) => state.record.owner;
 export const selectUrl = (state: RootState) => state.record.url;
 export const selectIsOwner = (state: RootState) => state.record.isOwner;
