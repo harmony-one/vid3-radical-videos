@@ -20,7 +20,8 @@ const VideoHome = () => {
   
   return (
     <div className='video-home'>
-      <h1>My Videos</h1>
+      {/* <h1>My Videos</h1> */}
+      <h1> </h1>
       <div className='video-grid'>
         {videos.length > 1 && videos.map((video, index) =>
           <video 
