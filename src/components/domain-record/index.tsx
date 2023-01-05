@@ -1,28 +1,24 @@
-import { utils } from 'ethers';
+import { AnyAction } from '@reduxjs/toolkit';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../hooks/redux';
 import { useAccount } from 'wagmi'
-import { config, truncateAddressString } from '../../util/web3/config';
-
-import './domain-record.scss'
 import Web3 from 'web3';
+
+import { setRecord } from '../../store/recordSlice';
+import { RecordType } from '../../types';
+import { config, truncateAddressString } from '../../util/web3/config';
 import apis from '../../util/web3/web3';
 
-type RecordType = {
-  renter: any,
-  lastPrice: any,
-  timeUpdated: any,
-  url: any,
-  prev: any,
-  next: any,
-}
-const DomainRecord = () => {
-  const [record, setRecord] = useState({});
-  const [name, setName] = useState('');
-  const [owner, setOwner] = useState('')
-  const { address } = useAccount()
+import './domain-record.scss'
 
-  const tld = process.env.REACT_APP_TLD;
+const DomainRecord = () => {
+  const [name, setName] = useState('');
+  const [owner, setOwner] = useState('');
+  const { address } = useAccount();
+  const dispatch = useAppDispatch();
   
+  const tld = process.env.REACT_APP_TLD;
   
   useEffect(() => {
     const getSubdomain = () => {
@@ -56,8 +52,10 @@ const DomainRecord = () => {
       const api = apis({ web3, address })
       console.log(api);
       api?.getRecord({ name }).then((r) => {
+        // dispatch(setRecord(r))
+        dispatch(setRecord(r))
+        console.log('RRRRRR',r);
         setOwner(r.renter);
-        setRecord(r);
       }).catch(e => console.log('ERRORRRRRR', { e }));
     }
   }, [name, address])
@@ -68,7 +66,6 @@ const DomainRecord = () => {
   //     console.log(res)
   //   }
   // },[name, refetch])
-  console.log('RECORD', name, { record });
   return (
     <div className='domain-record'>
       <div className='record-title'>{`${name}${tld}`}</div>

@@ -1,0 +1,15 @@
+import { configureStore } from '@reduxjs/toolkit';
+import recordReducer from './recordSlice';
+
+export const store = configureStore({
+  reducer: {
+    record: recordReducer,
+    // isOwner: isOwnerReducer
+  }
+})
+
+export type RootState = ReturnType<typeof store.getState>
+
+export type AppDispatch = typeof store.dispatch
+
+export default store;

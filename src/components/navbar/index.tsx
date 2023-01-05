@@ -6,13 +6,16 @@ import { FaWallet } from "react-icons/fa";
 
 import "./navbar.scss";
 import { useEffect, useState } from "react";
+import { useAppSelector } from "../../hooks/redux";
 
 const Navbar = () => {
   const { address, isConnected } = useAccount();
   const [ isOwner, setIsOnwer ] = useState(false);
   const [ walletClassName, setWalletClassName ] = useState("wallet-button")
   const { open } = useWeb3Modal();
-
+  
+  const record = useAppSelector((state) => state.record.currentRecord) 
+  
   const { disconnect } = useDisconnect();
 
   const buttonHandler = () => {
@@ -31,7 +34,7 @@ const Navbar = () => {
       setWalletClassName('nav-wallet-button')
     }
   }, [isConnected])
-  
+
   return (
     <div className="navbar">
       <div className='nav-home'>
