@@ -16,7 +16,7 @@ const VideoThumbnail = ({ video } : VideoThumbnailProps) => {
 
   return (
     <div className='thumbnail'>
-       <video
+      <video
         playsInline
         muted
         autoPlay
