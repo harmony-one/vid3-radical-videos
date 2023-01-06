@@ -8,7 +8,7 @@ type VideoGalleryProps = {
 const VideoGallery = ({ videos } : VideoGalleryProps) => {
   return (
     <div className="video-gallery">
-      {videos.length > 1 &&
+      {videos.length > 0 &&
         videos.map((video, index) => (
           <VideoThumbnail video={video} key={index} />
         ))}

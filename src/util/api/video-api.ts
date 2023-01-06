@@ -15,41 +15,7 @@ export const TEST_VIDEOS = [
     vanityUrl: '1',
     merchandiseId: undefined,
   },
-  {
-    url: video2,
-    vanityUrl: '2',
-    merchandiseId: '34342',
-  },
-  {
-    url: video3,
-    vanityUrl: '3',
-    merchandiseId: '34234',
-  },
-  {
-    url: video4,
-    vanityUrl: '5',
-    merchandiseId: undefined,
-  },
-  {
-    url: video1,
-    vanityUrl: '1',
-    merchandiseId: undefined,
-  },
-  {
-    url: video2,
-    vanityUrl: '2',
-    merchandiseId: '34342',
-  },
-  {
-    url: video3,
-    vanityUrl: '3',
-    merchandiseId: '34234',
-  },
-  {
-    url: video4,
-    vanityUrl: '5',
-    merchandiseId: undefined,
-  }
+  
 ]
 
 export const getOwnerVideos = (name: string) => {
