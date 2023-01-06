@@ -1,0 +1,7 @@
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 10vw);
+  grid-row-gap: 65px;
+  grid-column-gap: 5px
+}

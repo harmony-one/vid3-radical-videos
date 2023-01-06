@@ -1,0 +1,15 @@
+.feature-video {
+  width:  20em;
+  // margin-left: 2em;
+  // margin-right: 2em;
+ 
+  video {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+}

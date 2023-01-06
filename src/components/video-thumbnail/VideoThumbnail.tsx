@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
 import { VideoType } from "../../util/api/video-api";
 
+import './VideoThumbnail.styles.scss';
+
 type VideoThumbnailProps = {
   video : VideoType
 }
@@ -13,7 +15,7 @@ const VideoThumbnail = ({ video } : VideoThumbnailProps) => {
   };
 
   return (
-    <div>
+    <div className='thumbnail'>
        <video
         playsInline
         muted

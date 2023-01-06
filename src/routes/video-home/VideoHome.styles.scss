@@ -1,22 +1,6 @@
 .video-home {
-  
-  .video-grid {
-    margin: 0 auto;
-    width: 90%;
-    display: grid;
-    overflow-y: auto;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-gap: 1em;
-    margin-bottom: 4em;
-
-    video {
-      cursor: pointer;
-      width: 100%;
-      border-radius: 15px;
-    }
-
-    video::-webkit-media-controls-start-playback-button {
-      display: none !important;
-    }
-  }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
