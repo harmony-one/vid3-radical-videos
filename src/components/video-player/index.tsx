@@ -26,6 +26,7 @@ const VideoPlayer = ({ video } : VideoPlayerProps) => {
   });
 
   const navigate = useNavigate()
+  
   const muteVideo = (e: { stopPropagation: () => void }) => {
     e.stopPropagation()
     setMuted(current => !current)

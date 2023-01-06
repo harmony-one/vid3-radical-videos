@@ -12,6 +12,7 @@ import { useAppDispatch } from '../../hooks/redux';
 import { setIsOwner } from '../../store/recordSlice';
 
 import "./navbar.scss";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const { address, isConnected } = useAccount();
   const [ walletClassName, setWalletClassName ] = useState("wallet-button")
@@ -20,7 +21,8 @@ const Navbar = () => {
   const isOwner = useAppSelector(selectIsOwner);
   const { disconnect } = useDisconnect();
   const dispatch = useAppDispatch();
-  
+  const navigate = useNavigate();
+
   const buttonHandler = () => {
     console.log('click', isConnected);
     if (isConnected) {
@@ -41,15 +43,26 @@ const Navbar = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isConnected, address, owner])
 
+  const uploadVideo = () => {
+    navigate('upload/')
+  }
+
+  const getNavAction = () => {
+    if (isConnected) {
+      if (isOwner)
+        return (<div onClick={uploadVideo}><AiOutlinePlus /></div>)
+      return  (<button className='nav-subscribe-button' onClick={() => navigate('subscribe/')}>Subscribe</button>)
+    }
+    return (<span style={{ fontSize: '0.9rem'}}>Connect Wallet</span>)
+  }
+  
   return (
     <div className="navbar">
-      <div className='nav-home'>
+      <div className='nav-home' onClick={() => navigate('/')}>
         <AiFillHome />
       </div>
       <div className='nav-action'>
-        {!isConnected && (<span style={{ fontSize: '0.9rem'}}>Connect Wallet</span>)}
-        {isConnected && isOwner && (<AiOutlinePlus />) }
-        {isConnected && !isOwner && (<button className='nav-subscribe-button'>Subscribe</button>) }
+        {getNavAction()}
       </div>
       <div className={walletClassName} onClick={buttonHandler}>
         <FaWallet />

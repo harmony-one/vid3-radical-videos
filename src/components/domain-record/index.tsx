@@ -49,7 +49,6 @@ const DomainRecord = () => {
     if (name) {
       const web3 = new Web3(config.defaultRPC)
       const api = apis({ web3, address })
-      console.log(api);
       api?.getRecord({ name }).then((r) => {
         dispatch(setOwner(r.renter))
         setOwnerAddress(r.renter);
@@ -61,7 +60,7 @@ const DomainRecord = () => {
   return (
     <div className='domain-record'>
       <div className='record-title'>{`${name}${tld}`}</div>
-      <div className='record-owner'>{name && !isOwner && `Owner ${truncateAddressString(ownerAddress,10)}`}</div>
+      <div className='record-owner'>{name && !isOwner && (`Owner ${truncateAddressString(ownerAddress,10)}`)}</div>
       <div className='record-owner'>{name && isOwner && isConnected && `You own this domain page`}</div>
     </div>
   )

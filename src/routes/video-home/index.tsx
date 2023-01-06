@@ -17,7 +17,6 @@ const VideoHome = () => {
   return (
     <>
       <div className="video-home">
-        <DomainRecord />
         <div className="video-grid">
           {videos.length > 1 &&
             videos.map((video, index) => (
@@ -25,7 +24,6 @@ const VideoHome = () => {
             ))}
         </div>
       </div>
-      <Navbar />
     </>
   );
 };
