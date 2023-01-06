@@ -78,6 +78,7 @@
       align-items: flex-end;
 
       .videoPlayer-mute-icon {
+        opacity: 0.5;
         background-color: #525252;
         border-radius: 50px;
         z-index: 5;
@@ -88,7 +89,7 @@
         padding: 0.2em 0.2em 0em;
         
         svg {
-          font-size: 1.2rem;
+          font-size: 4rem;
           margin: 0 auto;
         }
       }
