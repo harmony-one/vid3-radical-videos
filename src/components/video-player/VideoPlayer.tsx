@@ -7,7 +7,7 @@ import { BsVolumeMuteFill, BsVolumeDownFill } from 'react-icons/bs'
 import { AiFillCloseCircle } from 'react-icons/ai'
 import ApplePayLogo from '../../assets/images/logos/Apple Pay Logo White 2.png'
 
-import './video-player.scss'
+import './VideoPlayer.styles.scss'
 
 type VideoPlayerProps = {
   video : VideoType

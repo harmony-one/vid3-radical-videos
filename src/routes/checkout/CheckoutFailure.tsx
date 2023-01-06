@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-import "./Checkout.scss";
+import "./Checkout.styles.scss";
 
 const CheckoutFailure = () => {
   const { userUuid } = useParams();

@@ -9,7 +9,7 @@ import { selectIsOwner } from "../../store/recordSlice";
 import { config, truncateAddressString } from '../../util/web3/config';
 import apis from '../../util/web3/web3';
 
-import './domain-record.scss'
+import './DomainRecord.styles.scss'
 
 const DomainRecord = () => {
   const [ownerAddress, setOwnerAddress] = useState('');

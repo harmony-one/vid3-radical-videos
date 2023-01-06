@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import "./Checkout.scss";
+import "./Checkout.styles.scss";
 
 const CheckoutSuccess = () => {
   // const [tokenImage, setTokenImage] = useState();

@@ -11,10 +11,10 @@ import { Helmet } from "react-helmet";
 
 import { config } from "./util/web3/config";
 
-import VideoReels from "./routes/video-reels";
-import VideoHome from "./routes/video-home";
-import Navigation from "./routes/navigation";
-import VideoUpload from "./routes/video-upload";
+import VideoReels from "./routes/video-reels/VideoReels";
+import VideoHome from "./routes/video-home/VideoHome";
+import Navigation from "./routes/navigation/Navigation";
+import VideoUpload from "./routes/video-upload/VideoUpload";
 import Subscribe from "./routes/subscribe/Subscribe";
 
 import "./App.css";

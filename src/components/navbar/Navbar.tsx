@@ -11,7 +11,7 @@ import { selectIsOwner, selectOwner } from "../../store/recordSlice";
 import { useAppDispatch } from '../../hooks/redux';
 import { setIsOwner } from '../../store/recordSlice';
 
-import "./navbar.scss";
+import "./Navbar.styles.scss";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const { address, isConnected } = useAccount();

@@ -1,8 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
-import DomainRecord from "../../components/domain-record";
-import Navbar from "../../components/navbar";
+import DomainRecord from "../../components/domain-record/DomainRecord";
+import Navbar from "../../components/navbar/Navbar";
 
-import './navigation.scss';
+import './Navigation.styles.scss';
 
 const Navigation = () => {
   return (

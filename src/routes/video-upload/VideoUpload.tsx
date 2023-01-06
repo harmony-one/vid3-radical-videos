@@ -5,7 +5,7 @@ import "/node_modules/video-react/dist/video-react.css";
 import { Player } from "video-react";
 
 import "react-dropzone-uploader/dist/styles.css";
-import './video-upload.scss';
+import './VideoUpload.styles.scss';
 
 const VideoUpload = () => {
   const [files, setFiles] = useState<FileValidated[]>([]);

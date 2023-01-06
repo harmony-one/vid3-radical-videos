@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import DomainRecord from "../../components/domain-record";
-import Navbar from "../../components/navbar";
-import VideoThumbnail from "../../components/video-thumbnail";
+import VideoThumbnail from "../../components/video-thumbnail/VideoThumbnail";
 import { getOwnerVideos, VideoType } from "../../util/api/video-api";
 
-import "./video-home.scss";
+import "./VideoHome.styles.scss";
 
 const VideoHome = () => {
   const [videos, setVideos] = useState<VideoType[]>([]);
