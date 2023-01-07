@@ -1,16 +1,27 @@
-.video-player {
+import styled from "styled-components";
+
+export const VideoPlayerContainer = styled.div<{ opacity: number}>`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  overflow: hidden;
+  position: relative;
   height: 100vh;
+  //https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser
+  height: -webkit-fill-available;
 
   video {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    max-height: 100%;
     object-fit: cover;
   }
 
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+
   .videoPlayer-content {
+    object-fit: cover;
     z-index: 3;
     background: transparent;
     position: absolute;
@@ -19,7 +30,7 @@
     top: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; // flex-end;
+    justify-content: space-between;
     align-items: center;
     color: white;
 
@@ -29,7 +40,6 @@
       width: 100%;
       justify-content: space-between;
       align-items: center;
-      height: 3em;
 
       .videoPlayer-top-close {
         cursor: pointer;
@@ -37,9 +47,12 @@
         margin-top: 1em;
         margin-left: 1em;
         z-index: 4;
-        font-size: 1.5em;
+        opacity: ${({ opacity }) => opacity};
+        svg {
+          font-size: 4rem;
+        }
       }
-      
+
       .videoPlayer-pay-icon {
         cursor: pointer;
         margin-right: 1em;
@@ -66,20 +79,20 @@
       align-items: flex-end;
 
       .videoPlayer-mute-icon {
+        opacity: ${({ opacity }) => opacity};
         background-color: #525252;
         border-radius: 50px;
-        z-index: 4;
-        position: relative;
+        z-index: 5;
         cursor: pointer;
         margin-right: 1em;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
         padding: 0.2em 0.2em 0em;
-        
+
         svg {
-          font-size: 1.2rem;
+          font-size: 4rem;
           margin: 0 auto;
         }
       }
     }
   }
-}
+`;
