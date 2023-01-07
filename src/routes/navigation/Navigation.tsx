@@ -7,9 +7,9 @@ import './Navigation.styles.scss';
 const Navigation = () => {
   return (
     <div className='navigation'>
-      <DomainRecord />
+      {/* <DomainRecord /> */}
       <Outlet />
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   )
   
