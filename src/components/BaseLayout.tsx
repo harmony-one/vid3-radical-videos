@@ -9,7 +9,7 @@ interface Props {
 export const BaseLayout: React.FC<Props> = ({children}) => {
   return <>
       <Header />
-      <Page background="background-front" kind="narrow">
+      <Page kind="narrow">
         <PageContent>
           {children}
         </PageContent>

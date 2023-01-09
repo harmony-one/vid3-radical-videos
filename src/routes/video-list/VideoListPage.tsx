@@ -40,3 +40,5 @@ export const VideoListPage: React.FC<Props> = () => {
 };
 
 VideoListPage.displayName = 'VideoListPage';
+
+export default VideoListPage;

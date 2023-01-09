@@ -41,7 +41,7 @@ const VideoDetailsPage = () => {
   return (
     <BaseLayout>
       {!isVideoExistAndReady && (
-        <div>video preparing...</div>
+        <div>video preparing...123</div>
       )}
       {isVideoExistAndReady && (
         <MuxPlayer
