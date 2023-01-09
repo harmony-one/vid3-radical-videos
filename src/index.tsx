@@ -7,16 +7,21 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import { Providers } from "./Providers";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+// TODO: move all providers to Providers.tsx
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <Providers>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </Providers>
     </BrowserRouter>
   </React.StrictMode>
 );
