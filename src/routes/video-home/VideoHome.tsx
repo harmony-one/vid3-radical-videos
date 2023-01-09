@@ -4,7 +4,6 @@ import VideoGallery from "../../components/video-gallery/VideoGallery";
 import { getOwnerVideos, VideoType } from "../../util/api/video-api";
 
 import "./VideoHome.styles.scss";
-import {Anchor, Button} from "grommet";
 
 const VideoHome = () => {
   const [videos, setVideos] = useState<VideoType[]>([]);
@@ -27,8 +26,6 @@ const VideoHome = () => {
         )}
         <h3 style={{ paddingTop: '1em'}}>Video Gallery</h3>
         <VideoGallery videos={videos} />
-
-        <Button primary href="/upload" label="Upload video" />
       </div>
     </>
   );

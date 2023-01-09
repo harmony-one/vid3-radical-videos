@@ -14,14 +14,12 @@ import { config } from "./util/web3/config";
 import VideoReels from "./routes/video-reels/VideoReels";
 import VideoHome from "./routes/video-home/VideoHome";
 import Navigation from "./routes/navigation/Navigation";
+import VideoUpload from "./routes/video-upload/VideoUpload";
 import Subscribe from "./routes/subscribe/Subscribe";
 
 import "./App.css";
 import CheckoutSuccess from "./routes/checkout/CheckoutSuccess";
 import CheckoutFailure from "./routes/checkout/CheckoutFailure";
-import VideoUploadPage from "./routes/video-upload/VideoUploadPage";
-import VideoDetailsPage from "./routes/video-details/VideoDetailsPage";
-import VideoListPage from "./routes/video-list/VideoListPage";
 
 
 const projectId = process.env.REACT_APP_WALLETCONNECT_PROJECTID!;
@@ -55,9 +53,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigation />} >
             <Route path="/" element={<VideoHome />} />
-            <Route path="upload/" element={<VideoUploadPage />} />
-            <Route path="upload/list" element={<VideoListPage />} />
-            <Route path="upload/list/:videoId" element={<VideoDetailsPage />} />
+            <Route path="upload/" element={<VideoUpload />} />
             <Route path="subscribe/" element={<Subscribe />} />
           </Route>
           <Route path="/:vanityUrl" element={<VideoReels />} />

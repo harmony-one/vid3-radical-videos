@@ -2090,39 +2090,6 @@
     "@motionone/dom" "^10.15.3"
     tslib "^2.3.1"
 
-"@mux/mux-player-react@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@mux/mux-player-react/-/mux-player-react-1.5.1.tgz#7571fcccc08766360f70124107257ffdc65e0d9a"
-  integrity sha512-6VdNOSyi4aBLWL2oFayQQJ/LnVfl2bitTOLRKHziCRUD8SYIczodD43YVCyrSaHREmrUz6Fn9Q5+b8N2WBp+Sw==
-  dependencies:
-    "@mux/mux-player" "1.5.1"
-    "@mux/playback-core" "0.15.0"
-    prop-types "^15.7.2"
-
-"@mux/mux-player@1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@mux/mux-player/-/mux-player-1.5.1.tgz#39275b05e3bdcba70145ef0ae4c67438c4296772"
-  integrity sha512-aLqeVLzT/bmcMDSOQ3Fu+sjhBczUPki0bMhpLyZEMUfN40lIhsyMgYZnx1JI8M3gVL+zzISx2nJ8G45a0bZF+Q==
-  dependencies:
-    "@mux/mux-video" "0.12.0"
-    "@mux/playback-core" "0.15.0"
-    media-chrome "0.16.2"
-
-"@mux/mux-video@0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@mux/mux-video/-/mux-video-0.12.0.tgz#21e0798c057cd6ac3bfbd5c93c26a77508f8f11d"
-  integrity sha512-Nr5McFX0fxV+qnIKOf554wNm2f1YdIy8fJxg48E69QBnMxN8dhWAZrsuFm/UJwFyDpsl7T/CbCDp6JmOwgBEUg==
-  dependencies:
-    "@mux/playback-core" "0.15.0"
-
-"@mux/playback-core@0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@mux/playback-core/-/playback-core-0.15.0.tgz#bee02abf9eba569d49b6505fe1d70525586c6f62"
-  integrity sha512-xBYd4ci8RYFGJUUAw3uX/DH4UUTzwb2FPePK8L5U+Q7SSPjQp/KiHzElJwEaAXT2Cv1H2s794nOblPTXHER/bw==
-  dependencies:
-    hls.js "1.2.3"
-    mux-embed "^4.14.0"
-
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz#dbf733a965ca47b1973177dc0bb6c889edcfb129"
@@ -7405,28 +7372,6 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
-grommet-icons@^4.8.0:
-  version "4.8.0"
-  resolved "https://registry.yarnpkg.com/grommet-icons/-/grommet-icons-4.8.0.tgz#3c9922b3662d0b9e22913ecbaa7b1101031b554b"
-  integrity sha512-8cS1zVib88SIyLfsWFFazMzYz/8k5MvXZqopUjN/Bnl8HvQBUe0Z87F+JXRb1AMMYkuqXQW9Pg6XfBB3Ro9VdQ==
-  dependencies:
-    grommet-styles "^0.2.0"
-
-grommet-styles@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/grommet-styles/-/grommet-styles-0.2.0.tgz#b2eac2b7e2747cb523434d21728ce5234f8ce4f4"
-  integrity sha512-0OMSYuGeyifYKpg4Gv2HzL8rUdd0ddnJ5LbCBKgDuloC71XIwr9g/Fxa6rs737MbPV7OZ4pEm4wvrjH4epzf1A==
-
-grommet@^2.28.0:
-  version "2.28.0"
-  resolved "https://registry.yarnpkg.com/grommet/-/grommet-2.28.0.tgz#57a08713012efd76a8c54783bd0735de4af73b46"
-  integrity sha512-3urt3aK1v7MRhVrdc7qUY5BkLZNlL4eEt5+3CBIDlA7IOb2x4y21hyxjhVd4lbklowC/n2Gtrt8YTob7sS6s3w==
-  dependencies:
-    grommet-icons "^4.8.0"
-    hoist-non-react-statics "^3.2.0"
-    markdown-to-jsx "^7.1.5"
-    prop-types "^15.8.1"
-
 grunt-contrib-uglify@^0.2.7:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/grunt-contrib-uglify/-/grunt-contrib-uglify-0.2.7.tgz#e6bda51e0c40a1459f6cead423c65efd725a1bf7"
@@ -7545,11 +7490,6 @@ hey-listen@^1.0.8:
   resolved "https://registry.yarnpkg.com/hey-listen/-/hey-listen-1.0.8.tgz#8e59561ff724908de1aa924ed6ecc84a56a9aa68"
   integrity sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==
 
-hls.js@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/hls.js/-/hls.js-1.2.3.tgz#9b9e5d5b05c4912dacec173962694b710eea33ac"
-  integrity sha512-CC/vHi82ldiiydIhliNI3whlcepRXxI2jdpd/KKb6lyEv+74e7lXs4cGk5PHfTLxZMKOj6+m5LX9VAbvV/r7AQ==
-
 hmac-drbg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -7559,7 +7499,7 @@ hmac-drbg@^1.0.1:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.2.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.0.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -9229,11 +9169,6 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
-markdown-to-jsx@^7.1.5:
-  version "7.1.8"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.1.8.tgz#49c3bb3c122aa714324034142c8829b93c889338"
-  integrity sha512-rRSa1aFmFnpDRFAhv5vIkWM4nPaoB9vnzIjuIKa1wGupfn2hdCNeaQHKpu4/muoc8n8J7yowjTP2oncA4/Rbgg==
-
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -9252,11 +9187,6 @@ mdn-data@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.4.tgz#699b3c38ac6f1d728091a64650b65d388502fd5b"
   integrity sha512-iV3XNKw06j5Q7mi6h+9vbx23Tv7JkjEVgKHW4pimwyDGWm0OIQntJJ+u1C6mg6mK1EaTv42XQ7w76yuzH7M2cA==
-
-media-chrome@0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/media-chrome/-/media-chrome-0.16.2.tgz#45d9f5c8557a36d8d31a3244ab16b3ca550dc82b"
-  integrity sha512-2oNkmoJ+MPqGfQzs7U3ds9kzxRdhcO90T70Wo6s3QnzpdvCgi68T6XLIdep+JvVLgkO6+L0UuqfXK3H9L/uBaw==
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -9504,11 +9434,6 @@ multihashes@^0.4.15, multihashes@~0.4.15:
     buffer "^5.5.0"
     multibase "^0.7.0"
     varint "^5.0.0"
-
-mux-embed@^4.14.0:
-  version "4.18.0"
-  resolved "https://registry.yarnpkg.com/mux-embed/-/mux-embed-4.18.0.tgz#6c5ef0e4d7e9ebd875a9c58420926db9429428e0"
-  integrity sha512-9tgHLg8plmJAOiOzG2Tvi1MO7LO44DaC4V9W67kxrfzqco37UmreiKBwvrykncW4VUwU7+nectz8AUjcYBCz4g==
 
 nano-json-stream-parser@^0.1.2:
   version "0.1.2"
