@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import VideoFeature from "../../components/video-feature/VideoFeature";
 import VideoGallery from "../../components/video-gallery/VideoGallery";
 import { getOwnerVideos, VideoType } from "../../util/api/video-api";
 
@@ -18,13 +17,6 @@ const VideoHome = () => {
   return (
     <>
       <div className="video-home">
-        {featureVideo && (
-          <>
-            <h3>Feature video</h3>
-            <VideoFeature feature={featureVideo} />
-          </>
-        )}
-        <h3 style={{ paddingTop: '1em'}}>Video Gallery</h3>
         <VideoGallery videos={videos} />
       </div>
     </>

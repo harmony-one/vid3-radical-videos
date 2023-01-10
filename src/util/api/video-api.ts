@@ -29,12 +29,7 @@ export const TEST_VIDEOS = [
     url: video4,
     vanityUrl: '4',
     merchandiseId: undefined,
-  },
-  {
-    url: video1,
-    vanityUrl: '5',
-    merchandiseId: undefined,
-  },
+  }
 ]
 
 export const getOwnerVideos = (name: string) => {

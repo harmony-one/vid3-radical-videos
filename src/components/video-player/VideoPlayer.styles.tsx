@@ -70,6 +70,28 @@ export const VideoPlayerContainer = styled.div<{ opacity: number}>`
       }
     }
 
+    .video-player-middle {
+      
+      padding-right: -0.6em;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      opacity: 0.15;
+      font-size: 7em;
+      
+      polygon {
+        fill: white;
+      }
+
+      .video-player-middle-left {
+        margin-left: -0.15em;
+      }
+
+      .video-player-middle-right {
+        margin-right: -0.15em;
+      }
+    }
     .videoPlayer-bottom {
       width: 100%;
       display: flex;

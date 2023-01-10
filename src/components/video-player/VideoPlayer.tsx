@@ -5,6 +5,8 @@ import { useInView } from "react-intersection-observer";
 import { VideoType } from "../../util/api/video-api";
 import { BsVolumeMuteFill, BsVolumeDownFill } from "react-icons/bs";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { FcPrevious, FcNext } from "react-icons/fc";
+
 import ApplePayLogo from "../../assets/images/logos/Apple Pay Logo White 2.png";
 
 import { VideoPlayerContainer } from "./VideoPlayer.styles";
@@ -82,11 +84,16 @@ const VideoPlayer = ({ video }: VideoPlayerProps) => {
           <div className="videoPlayer-top-close" onClick={close}>
             <AiFillCloseCircle />
           </div>
-          {video.merchandiseId && (
+          {/* {video.merchandiseId && (
             <div className="videoPlayer-pay-icon" onClick={purchaseButton}>
               <img src={ApplePayLogo} alt="Apple Pay" />
             </div>
-          )}
+          )} */}
+        </div>
+        <div className='video-player-middle'>
+          <div className='video-player-middle-left'><FcPrevious /></div>
+          <div className='video-player-middle-right'><FcNext /></div>
+          
         </div>
         <div className="videoPlayer-bottom">
           <div className="videoPlayer-mute-icon" onClick={muteVideo}>
